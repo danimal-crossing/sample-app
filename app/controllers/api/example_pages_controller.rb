@@ -2,7 +2,9 @@ class Api::ExamplePagesController < ApplicationController
 
   def hello_action
     # render a web response
-    render json: {message: "Hello"}
+    @message = "Hello World"
+    @time = Time.now.strftime("%A, %d %b %Y %l:%M %p")
+    render 'hello.json.jb'
   end
 
 end
